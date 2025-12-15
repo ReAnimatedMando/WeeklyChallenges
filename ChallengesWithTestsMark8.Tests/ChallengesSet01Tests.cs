@@ -21,7 +21,7 @@ namespace ChallengesWithTestsMark8.Tests
             ChallengesSet01 challenger = new ChallengesSet01();
 
             // Act
-            bool actual = challenger.AreTwoNumbersTheSame(number1, number2);
+            bool actual = challenger.AreTwoNumbersTheSame(number1,number2, true);
 
             // Assert
             Assert.Equal(expected, actual);
