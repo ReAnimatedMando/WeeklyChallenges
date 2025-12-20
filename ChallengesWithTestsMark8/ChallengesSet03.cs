@@ -68,17 +68,24 @@ namespace ChallengesWithTestsMark8
 
         public char GetFirstLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            char[] letters = val.ToCharArray();
+            return val[0];
         }
 
         public char GetLastLetterOfString(string val)
         {
-            throw new NotImplementedException();
+            char[] letters = val.ToCharArray();
+            return val[val.Length - 1];
         }
 
         public decimal Divide(decimal dividend, decimal divisor)
         {
-            throw new NotImplementedException();
+            if (divisor == 0)
+            {
+                return 0;
+            }
+
+            return dividend / divisor;
         }
 
         public int LastMinusFirst(int[] nums)
