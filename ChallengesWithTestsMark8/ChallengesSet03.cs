@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -20,12 +21,49 @@ namespace ChallengesWithTestsMark8
 
         public bool IsSumOfOddsOdd(IEnumerable<int> numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null || numbers.Count() == 0)
+            {
+                return false;
+            }
+
+            var sum = numbers.Sum();
+
+            return (sum % 2 != 0);
         }
 
         public bool PasswordContainsUpperLowerAndNumber(string password)
         {
-            throw new NotImplementedException();
+            var isLower = false;
+            var isUpper = false;
+            var isNumber = false;
+
+            for (int i = 0; i < password.Length; i++)
+            {
+                if (char.IsLower(password[i]))
+                {
+                    isLower = true;
+                }
+
+                if (char.IsUpper(password[i]))
+                {
+                    isUpper = true;
+                }
+
+                if (char.IsNumber(password[i]))
+                {
+                    isNumber = true;
+                }
+            }
+
+            if (isLower == true && isUpper == true && isNumber == true)
+            {
+                return true;
+            }
+            else
+            { 
+                return false;
+            }
+            
         }
 
         public char GetFirstLetterOfString(string val)
