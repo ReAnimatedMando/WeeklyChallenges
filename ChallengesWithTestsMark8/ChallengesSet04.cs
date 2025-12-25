@@ -58,17 +58,46 @@ namespace ChallengesWithTestsMark8
 
         public bool MajorityOfElementsInArrayAreNull(object[] objs)
         {
-            throw new NotImplementedException();
+            var amount = objs.Length;
+            var majority = (amount / 2) + 1;
+            var count = 0;
+            foreach (var obj in objs)
+            {
+                if (obj == null)
+                {
+                    count++;
+                }
+            }
+
+            if (count >= majority)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
 
         public double AverageEvens(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null || numbers.Length == 0)
+            {
+                return 0;
+            }
+
+            var n = numbers.Where(x => x % 2 == 0);
+            if (n.Count() == 0)
+            {
+                return 0;
+            }
+
+            return n.Average();
         }
 
         public int Factorial(int number)
         {
-            throw new NotImplementedException();
+            
         }
     }
 }
