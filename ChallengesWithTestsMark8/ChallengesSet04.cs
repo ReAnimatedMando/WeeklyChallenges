@@ -97,7 +97,17 @@ namespace ChallengesWithTestsMark8
 
         public int Factorial(int number)
         {
-            
+            var ans = 1;
+            if (number < 0)
+            {
+                throw new ArgumentOutOfRangeException(nameof(number), "cannot be negative");
+            }
+            for (int i = 2; i <= number; i++)
+            {
+                ans = ans * i;
+            }
+
+            return ans;
         }
     }
 }
