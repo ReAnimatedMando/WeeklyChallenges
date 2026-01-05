@@ -50,7 +50,28 @@ namespace ChallengesWithTestsMark8
 
         public int IndexOfLastUniqueLetter(string str)
         {
-            throw new NotImplementedException();
+            int index = -1;
+            bool uIndex;
+
+            for (int i = 0; i < str.Length; i++)
+            {
+                uIndex = true;
+
+                for (int j = 0; j < str.Length; j++)
+                {
+                    if (str[i] == str[j] && i != j)
+                    {
+                        uIndex = false;
+                    }
+                }
+
+                if (uIndex == true)
+                {
+                    index = i;
+                }
+            }
+
+            return index;
         }
 
         public int MaxConsecutiveCount(int[] numbers)
