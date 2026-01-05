@@ -32,7 +32,20 @@ namespace ChallengesWithTestsMark8
 
         public bool IsPrimeNumber(int num)
         {
-            throw new NotImplementedException();
+            if (num <= 1)
+            {
+                return false;
+            }
+
+            for (int i = 2; i <= Math.Sqrt(num); i++)
+            {
+                if (num % i == 0)
+                {
+                    return false;
+                }
+            }
+
+            return true;
         }
 
         public int IndexOfLastUniqueLetter(string str)
