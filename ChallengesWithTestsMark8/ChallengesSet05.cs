@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace ChallengesWithTestsMark8
 {
@@ -41,17 +42,66 @@ namespace ChallengesWithTestsMark8
 
         public int SumElementsThatFollowAnEven(int[] numbers)
         {
-            throw new NotImplementedException();
+            if (numbers == null || numbers.Length == 0)
+            {
+                return 0;
+            }
+
+            int sum = 0;
+            
+            for (int i = 1; i < numbers.Length; i++)
+            {
+                if (numbers[i - 1] % 2 == 0)
+                {
+                    sum += numbers[i];
+                }
+            }
+
+            return sum;
         }
 
         public string TurnWordsIntoSentence(string[] words)
         {
-            throw new NotImplementedException();
+            if (words == null || words.Length == 0)
+            {
+                return "";
+            }
+
+            string sentence = "";
+            
+            foreach (string word in words)
+            {
+                if (word.Trim().Length > 0)
+                {
+                    sentence += word.Trim() + " ";
+                }
+            }
+
+            if (sentence.Length == 0)
+            {
+                return "";
+            }
+
+            sentence = sentence.Trim();
+            sentence += ".";
+            return sentence;
         }
 
         public double[] GetEveryFourthElement(List<double> elements)
         {
-            throw new NotImplementedException();
+            if (elements == null || elements.Count == 0)
+            {
+                return new double[0];
+            }
+
+            List<double> everyFourth = new List<double>();
+
+            for (var i = 3; i < elements.Count; i += 4)
+            {
+                everyFourth.Add(elements[i]);
+            }
+
+            return everyFourth.ToArray();
         }
 
         public bool TwoDifferentElementsInArrayCanSumToTargetNumber(int[] nums, int targetNumber)
