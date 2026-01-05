@@ -102,7 +102,19 @@ namespace ChallengesWithTestsMark8
 
         public double[] GetEveryNthElement(List<double> elements, int n)
         {
-            throw new NotImplementedException();
+            List<double> everyNinth = new List<double>();
+            
+            if (elements == null || n <= 0 || n > elements.Count)
+            {
+                return everyNinth.ToArray();
+            }
+            
+            for (var i = n - 1; i < elements.Count; i += n)
+            {
+                everyNinth.Add(elements[i]);
+            }
+
+            return everyNinth.ToArray();
         }
     }
 }
